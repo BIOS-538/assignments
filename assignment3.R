@@ -1,6 +1,7 @@
 # assignment3.R
 # author: Prashant K
 # Update: 29/Jan/24: numeric index in Q7; function documentation in Q10
+# Update: 29/Jan_b : changed Q6 to not repeat Q5c, with hints/examples
 
 # Instructions --------------------------------------------------
 
@@ -67,13 +68,17 @@
 # Convert the list into these datatypes and display outputs (0.5 point)
 # .. a. tibble (tidyverse's dplyr package) and 
 # .. b. data.frame
-# .. c. comment on 2 key differences between a. and b.
-
+# .. c. Why is tibble better than a data.frame? Explain 2 reasons
+# ... One sentence for each with where you see it's use is good enough
+# ... ex: Is the tibble output more informative? in what sense?
+# hint: https://tibble.tidyverse.org/articles/tibble.html
 
 
 # Q6 ------------------------------------------------------------------
 
-# Comment on 2 key differences between tibble & data.frame (0.5 point)
+# Directly create the data.frame and tibble from the vectors 
+# ... without going through a list intermediate. (0.5 point)
+# hint: https://tibble.tidyverse.org/
 
 
 # Q7 ------------------------------------------------------------------
