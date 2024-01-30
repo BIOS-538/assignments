@@ -1,7 +1,9 @@
 # assignment3.R
 # author: Prashant K
-# Update: 29/Jan/24: numeric index in Q7; function documentation in Q10
-# Update: 29/Jan_b : changed Q6 to not repeat Q5c, with hints/examples
+# Update1: 29/Jan/24: numeric index in Q7; function documentation in Q10
+# Update2: 29/Jan/24: changed Q6 to not repeat Q5c, with hints/examples
+# update3: 30/Jan/24: fixed Q10 outer function takes only y (no x!) 
+
 
 # Instructions --------------------------------------------------
 
@@ -105,13 +107,20 @@
 
 # Q10 ------------------------------------------------------------------
 
-# Make a function that takes two variables and x, y and returns another 
-# ... function of a single variable x that calculates  x^y 
+# Make a function that takes one variable y and returns another function
+# ... of a single variable x that calculates  x^y 
 # Test the function with y = 2, assigned to a function "square"
 # ... and 2 more values of y other than 1 (2 points)
 # Hint: the function returns the last value that is assigned inside {..}
+# Reference: https://adv-r.hadley.nz/function-factories.html
+
 #' Add documentation of your function using roxygen2 style comments.
 #' link: https://roxygen2.r-lib.org/articles/rd.html#basics
+
+
+## Q10b (bonus) -------------------------------------------------------
+# Explain why the outer function (function generator) does not need to
+# .. take both x and y as inputs (0.5 point)
 
 
 # Q11 ------------------------------------------------------------------
