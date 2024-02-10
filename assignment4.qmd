@@ -1,136 +1,195 @@
 ---
-title: "assignment4"
+title: "Assignment4"
 format: html
 editor: visual
 ---
 
-# Assignment 4
+Assignment 4, due Friday, x?
 
-## **Instructions**
+# **Instructions**
 
--   Total = 10 points + 5.5 bonus. Most questions are 0.5 point each.
+-   Total = 10 points + x bonus. Most questions are 0.5 point each.
 
--   Cite your sources and collaborators in the credits.
+-   Cite your sources by pasting links below the answers to each question. Acknowledge collaborators in the credits at the beginning.
 
-**Goal:** This assignment is meant to make you review the slides, R script, and recall topics mentioned in the course during\
-the in-class activity.
+**Goal:** This assignment is meant to make you get hands-on practice the R content at your own pace. Do take the time to review the slides, `.R` worksheet and re-watch lectures if you need, to recall topics mentioned in the course and the in-class activity.
 
-**Format:** Please type out your answers in an R script (test it in RStudio) and use copious amount of comments to document and explain your answer. **Upload the R script as a file on canvas.**
+**Format:** Please type out your answers within R chunks in this `.qmd` (quarto markdown) script, along with comments added below the code as plain text to briefly explain your answer / steps taken. \_If relevant, make short comment next to the line of code with `#…`. Please make sure to run and test the `R` chunks in RStudio before submission. If possible, try to `knit`/`Render` the document into the `.html` output format and submit this along with the `.qmd` file on Canvas. In short: **upload the `.qmd` script + `.html` output (*optional*) as a file attachments on canvas.**
 
-**Bonus**: These questions that make you go beyond the material covered in the class, and would require self exploration, ie) searching the Internet, parsing out correct answers, and understanding them enough to solve it. Hence documenting your sources is very\
-important for bonus questions. **Any points beyond the maximum for in this assignment will carried over to your course grade**
+**Bonus**: (***NEW***) Bonus 0.x series questions check for basic understanding/fundamentals/ topics mentioned previously as an opportunity for anyone who didn't understand these previously to catch up by reading on them and demonstrating learning. *If you already knew the answer well enough, you can skip these bonus questions and spend time more effectively on the harder bonus questions!* 😉
 
-## Loading libraries
+Other bonus questions make you go beyond the material covered in the class, and would require self exploration, i.e.) searching the Internet, parsing out correct answers, and understanding them enough to solve it. Hence *documenting your sources and proper explanation is very important for bonus questions*. **Any points beyond the maximum for in this assignment will carried over to your course grade**
 
-*(bonus) Explain why we need to use* `library()` *command in one sentence*
+## Scope
+
+This assignment is meant to be a guide to exploring your data with tabular manipulations (`dplyr`) and visual inspection (`ggplot`). Read more about exploratory data analysis [here](https://r4ds.had.co.nz/exploratory-data-analysis.html). *The material in this homework was covered in these lectures -*
+
+-   Tidyverse: class 6, 7
+
+-   ggplot: class 8
+
+## Resources for extra help
+
+1.  Interactive tutorial to brush up `dplyr` functions such as `mutate()`, `filter()`, `arrange()` and others. I strongly recommend going through this exercise step-by-step for gaining confidence.
+2.  Markdown formatting guide
+
+## Credits for collaboration
+
+*Please list your collaborators here with their key contribution summarized in a short sentence. For example -*
+
+> **Annie**: Ideas for data-set and a few questions
+>
+> **Sam**: General discussion
+
+# Questions
+
+## Q0. Loading libraries and data
+
+***Bonus 0.a.** (0.25 point each x 3)*
+
+-   *Explain why we need to use* `library()` *command in one sentence with a citation;*
+
+-   *where is* `install.packages()` *installing the gapminder package from?*
+
+    -   *Which of these two commands do you require the internet to run?*
+
+-   Complete the comments next to the code in the `R` chunk below
 
 ```{r libraries}
-library(ggplot2) # add comment on package purpose..
-library(forecast) # "
+library(tidyverse) # add comment on package purpose..
+
+install.packages('gapminder') # "
 ```
 
-\_if you are getting an error by running this, it usually means you haven't installed the `forecast` package form the internet. Do `install.packages('forecast')`
+### Data for this work
 
-## Q1
+1.  `midwest` : We will use the data set `midwest` containing demographic information of midwest counties from the 2000 US census. Reference: [ggplot2](https://ggplot2.tidyverse.org/reference/midwest.html)
 
-(*0.5 points)* We will use the data set "midwest",demographic information of midwest counties from the 2000 US census.
+2.  `gapminder` : This data contains the population and GDP per capita of multiple countries, and continents across years (1952 - 2007). Reference: [CRAN](https://cran.r-project.org/web/packages/gapminder/vignettes/gapminder.html)
 
-To access it, please install and load the forecast package, then you can use the line below to have the dataset be called data
+### Loading data
 
-See more details about data here: https://ggplot2.tidyverse.org/reference/midwest.html
+1.  Load the data from the gapminder package (0.25 points)
 
-data \<- midwest
+-   Hint: answer is written below, but you need to explain the difference in the 3 `gapminder` words used here (***Bonus 0.b.**/+0.25 points)*
 
-Create a 2 histograms, one showing percbelowpoverty and one showing percollege (% college educated)
+-   If that is too confusing, use your own method to load the data 🙂
 
-Display both graphs at the same time using ggarrange
+```{r load_data}
+gapminder <- gapminder::gapminder # what does this do?
+```
 
-Describe the difference between the histograms. 
+2.  Load the midwest dataset from the ggplot2 package (0.25 points)
 
-'\[0.25 points for each histogram\]
+*Make your own code chunk and load the midwest dataset here*
 
-'\[-0.25 if they dont explain the pattern they see\]
+------------------------------------------------------------------------
 
-Histo A.
+## Q1: Histograms
 
-ggplot(data = midwest,
+Create a 2 histograms, one showing `percbelowpoverty` and one showing `percollege` (% college educated) (*0.5 points)*
 
-       mapping = aes(x = percbelowpoverty)) + 
+```{r histograms}
 
-  geom_histogram()
+```
 
-Histo B.
+Display both graphs at the same time using the `patchwork` package (*0.25 points)*
 
-ggplot(data = midwest,
+*Here's hints for how to use [patchwork](https://patchwork.data-imaginist.com/articles/patchwork.html) to [assemble](https://patchwork.data-imaginist.com/articles/guides/assembly.html) plots*
 
-       mapping = aes(x = percollege)) + 
+```{r assemble_patchwork}
 
-  geom_histogram()
+```
 
-## Q2
+*Describe the patterns in the histograms in one short sentence each.* (0.25 points)
 
-Q2. 1.5 point. Create a scatterplot of percbelowpoverty vs. percollege. Color the datapoints
+(*Rubric*) '\[0.25 points for each histogram\] ; '\[-0.25 if they don't explain the pattern they see\]
 
-by the "inmetro" column (hint: use as.factorO, and write what a 0 means and what a 1 means.
+## Q2: Scatter plot
 
-Change the shape of data points based on the state.
+You now wish to explore the relationship between poverty and college degrees. To do this, we create a scatterplot of `percbelowpoverty` vs. `percollege`. Color the datapoints by the `inmetro` column (*hint: use as.factorO, and write what a 0 means and what a 1 means*) (0.5 points)
 
-Create another scatterplot, this time adding adding a geom_smooth line. 
+```{r scatterplot}
 
-Describe the pattern you see with the data. What story is the data telling?
+```
 
-BONUS, 0.5 points. Rename the legend for inmetro to be more intuitive than 0 & 1
+Change the shape of data points based on the state. (0.25 points)
 
-'\[-0.25 if they color points incorrectly\]
+```{r scatter_size}
 
-''\[-0.5 if they only do 1 histogram\]
+```
 
-'\[-0.5 if incorrect columns used\]
+Create another scatterplot, this time adding adding a geom_smooth line. (0.25 points)
 
-'\[-0.25 if they don't change inmetro to a factor\]
+```{r smooth_fit}
 
-'\[-0.5 if they dont explain the pattern they see\]
+```
 
-ggplot(midwest,
+Describe the pattern you see with the data. What story is the data telling? (*0.25 points*)
 
-       aes(x = percollege,
+### Q2.b (bonus): Custmize legend 
 
-           y = percbelowpoverty)) + 
+Rename the legend for `inmetro` to be more intuitive than 0 & 1 (*0.25 points*)
 
-  geom_point(midwest,mapping=aes(color=as.factor(inmetro)))
+```{r legend_gymnastics}
 
-## Q3
+```
 
-Q3. 1 point. Find the average popdensity across all counties. Create a new column
+(*Rubric*)
 
-that tells if a county is above or below average population density
+'\[-0.25 if they color points incorrectly\] ; '\[-0.5 if they only do 1 histogram\] ; '\[-0.5 if incorrect columns used\] ; '\[-0.25 if they don't change inmetro to a factor\] ; '\[-0.5 if they dont explain the pattern they see\]
 
-(name it something like above_density). 
+## Q3: barplots
 
-Create a barplot that shows how many counties are above and below the average.
+Find the average popdensity across all counties. Create a new column that tells if a county is above or below average population density using `mutate()`. *(name it something like above_density).* (*0.25 point*)
 
-Hint: you should have 2 boxes
+```{r data_wrangling}
 
-Color the bars by state.
+```
 
-Bonus: 2 points, find the mean for EACH STATE and repeat the above question, with
+Create a barplot that shows how many counties are above and below the average. *Hint: you should have 2 boxes (0.25 point)*
 
-The above_mean_density specific to the state the county is found in.
+```{r barplot}
 
-'\[-0.25 if calculate the mean incorrectly\]
+```
 
-'\[-0.25 if they do not color by state\]
+Color the counts in the bars by state. *(0.25 point)*
 
-'\[-0.5 if barplot is incorrect \]
+```{r colourbarplot}
 
-mean_popdensity \<- midwest\$popdensity %\>% mean() %\>% print() 
+```
 
-add new column
+### Q3.b (bonus): mean for each state 
 
-midwest\$above_mean_density \<- midwest\$popdensity \> mean_popdensity 
+Find the mean for EACH STATE and repeat the above question, with rhe above_mean_density specific to the state the county is found in. (*2 points)*
 
-midwest_new \<- midwest %\>% mutate(above_below=) 
+*Hint:* need to use `group_by()`
 
-create barplot
+(*Rubric*) : '\[-0.25 if calculate the mean incorrectly\] ; '\[-0.25 if they do not color by state\] ; '\[-0.5 if barplot is incorrect\]
 
-ggplot(midwest, aes(x = above_mean_density, fill = state)) + geom_bar()
+------------------------------------------------------------------------
+
+## Q4: Inspect the gapminder data
+
+When you get data, it is a good idea to know the column names, approximate size of data (rows and columns).
+
+What is one of the R command that let's you do this?
+
+```{r know_thy_data}
+
+```
+
+## Q5: Visually inspect the gapminder data
+
+Play with the data and make 2 timeseries plots to get a feel for your your favorite country's data over time *(x axis is time variable, y axis anything else)*
+
+```{r visual_eda1}
+
+
+```
+
+------------------------------------------------------------------------
+
+# Attributions
+
+[Gapminder](https://cran.r-project.org/web/packages/gapminder/index.html) dataset.
