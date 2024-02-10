@@ -2,7 +2,7 @@
 
 Assignments for this course are publicly available to share with the following license.
 
-If you are an instructor looking for the solutions/rubric to these assignments please leave an [issue](https://github.com/BIOS-538/assignments/issues) in this repository for requestion access!
+If you are an instructor using the material looking for the solutions/rubric to these assignments please leave an [issue](https://github.com/BIOS-538/assignments/issues) in this repository for requesting access! *This feature is meant so that the students do not have access to the private repository of the* `rubrics`😉
 
 Shield: [![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
