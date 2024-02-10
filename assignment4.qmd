@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-## Assignment 4
+# Assignment 4
 
 ## **Instructions**
 
@@ -20,12 +20,117 @@ the in-class activity.
 **Bonus**: These questions that make you go beyond the material covered in the class, and would require self exploration, ie) searching the Internet, parsing out correct answers, and understanding them enough to solve it. Hence documenting your sources is very\
 important for bonus questions. **Any points beyond the maximum for in this assignment will carried over to your course grade**
 
-# Q1
+## Loading libraries
 
-1.  Create these 3 vectors with arbitrary data of your choice. Check the type/class of each of the 3 vectors.
+*(bonus) Explain why we need to use* `library()` *command in one sentence*
 
-    -   names of 5 cities,
+```{r libraries}
+library(ggplot2) # add comment on package purpose..
+library(forecast) # "
+```
 
-    -   their temparatures today and
+\_if you are getting an error by running this, it usually means you haven't installed the `forecast` package form the internet. Do `install.packages('forecast')`
 
-    -   if they are on the coast or not. (*hint*: can only be `TRUE` or `FALSE`)
+## Q1
+
+(*0.5 points)* We will use the data set "midwest",demographic information of midwest counties from the 2000 US census.
+
+To access it, please install and load the forecast package, then you can use the line below to have the dataset be called data
+
+See more details about data here: https://ggplot2.tidyverse.org/reference/midwest.html
+
+data \<- midwest
+
+Create a 2 histograms, one showing percbelowpoverty and one showing percollege (% college educated)
+
+Display both graphs at the same time using ggarrange
+
+Describe the difference between the histograms. 
+
+'\[0.25 points for each histogram\]
+
+'\[-0.25 if they dont explain the pattern they see\]
+
+Histo A.
+
+ggplot(data = midwest,
+
+       mapping = aes(x = percbelowpoverty)) + 
+
+  geom_histogram()
+
+Histo B.
+
+ggplot(data = midwest,
+
+       mapping = aes(x = percollege)) + 
+
+  geom_histogram()
+
+## Q2
+
+Q2. 1.5 point. Create a scatterplot of percbelowpoverty vs. percollege. Color the datapoints
+
+by the "inmetro" column (hint: use as.factorO, and write what a 0 means and what a 1 means.
+
+Change the shape of data points based on the state.
+
+Create another scatterplot, this time adding adding a geom_smooth line. 
+
+Describe the pattern you see with the data. What story is the data telling?
+
+BONUS, 0.5 points. Rename the legend for inmetro to be more intuitive than 0 & 1
+
+'\[-0.25 if they color points incorrectly\]
+
+''\[-0.5 if they only do 1 histogram\]
+
+'\[-0.5 if incorrect columns used\]
+
+'\[-0.25 if they don't change inmetro to a factor\]
+
+'\[-0.5 if they dont explain the pattern they see\]
+
+ggplot(midwest,
+
+       aes(x = percollege,
+
+           y = percbelowpoverty)) + 
+
+  geom_point(midwest,mapping=aes(color=as.factor(inmetro)))
+
+## Q3
+
+Q3. 1 point. Find the average popdensity across all counties. Create a new column
+
+that tells if a county is above or below average population density
+
+(name it something like above_density). 
+
+Create a barplot that shows how many counties are above and below the average.
+
+Hint: you should have 2 boxes
+
+Color the bars by state.
+
+Bonus: 2 points, find the mean for EACH STATE and repeat the above question, with
+
+The above_mean_density specific to the state the county is found in.
+
+'\[-0.25 if calculate the mean incorrectly\]
+
+'\[-0.25 if they do not color by state\]
+
+'\[-0.5 if barplot is incorrect \]
+
+mean_popdensity \<- midwest\$popdensity %\>% mean() %\>% print() 
+
+add new column
+
+midwest\$above_mean_density \<- midwest\$popdensity \> mean_popdensity 
+
+midwest_new \<- midwest %\>% mutate(above_below=) 
+
+create barplot
+
+ggplot(midwest, aes(x = above_mean_density, fill = state)) + geom_bar()
