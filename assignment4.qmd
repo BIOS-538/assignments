@@ -1,0 +1,31 @@
+---
+title: "assignment4"
+format: html
+editor: visual
+---
+
+## Assignment 4
+
+## **Instructions**
+
+-   Total = 10 points + 5.5 bonus. Most questions are 0.5 point each.
+
+-   Cite your sources and collaborators in the credits.
+
+**Goal:** This assignment is meant to make you review the slides, R script, and recall topics mentioned in the course during\
+the in-class activity.
+
+**Format:** Please type out your answers in an R script (test it in RStudio) and use copious amount of comments to document and explain your answer. **Upload the R script as a file on canvas.**
+
+**Bonus**: These questions that make you go beyond the material covered in the class, and would require self exploration, ie) searching the Internet, parsing out correct answers, and understanding them enough to solve it. Hence documenting your sources is very\
+important for bonus questions. **Any points beyond the maximum for in this assignment will carried over to your course grade**
+
+# Q1
+
+1.  Create these 3 vectors with arbitrary data of your choice. Check the type/class of each of the 3 vectors.
+
+    -   names of 5 cities,
+
+    -   their temparatures today and
+
+    -   if they are on the coast or not. (*hint*: can only be `TRUE` or `FALSE`)
