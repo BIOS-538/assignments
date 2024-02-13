@@ -6,9 +6,11 @@ editor: visual
 
 Assignment 4, due Saturday, midnight. *Email me if you need more time as always!*
 
+Changelog: Mon_12/2/24: \[bonus on installing packages, fixed typos, clarified factors, Kable printing\]
+
 # **Instructions**
 
--   Total = 14.25 points + 6.25 bonus. *Most questions are 0.5 point each but Q5-8 have the bulk of the points* 😉
+-   Total = 14 points + 6 bonus. *Most questions are 0.25 point each but Q5-8 have the bulk of the points* 😉
 
 -   Cite your sources by pasting links below the answers to each question. Acknowledge collaborators in the credits at the beginning and attribute any general sources of inspiration at the end.
 
@@ -16,7 +18,7 @@ Assignment 4, due Saturday, midnight. *Email me if you need more time as always!
 
 **Format:** Please type out your answers within R chunks in this `.qmd` (quarto markdown) script, **along with comments added below or next to the code to concisely and clearly explain your answer** / steps taken. \_If relevant, make short comment next to the line of code with `#…`. **Please make sure to run and test the `R` chunks in RStudio before submission.** If possible, try to `knit`/`Render` the document into the `.html` output format and submit this along with the `.qmd` file on Canvas. In short: **upload the `.qmd` script + `.html` output (*optional*) as a file attachments on canvas.**
 
-**Make sure to change the filename to include your first name as a suffix `assignment4_.qmd`**
+**Make sure to change the filename to include your first name as a suffix `assignment4_NAME.qmd`**
 
 **Bonus**: (***NEW***) Bonus 0.x series questions check for basic understanding/fundamentals/ topics mentioned previously as an opportunity for anyone who didn't understand these previously to catch up by reading on them and demonstrating learning. *If you already knew the answer well enough, you can skip these bonus questions and spend time more effectively on the harder bonus questions!* 😉
 
@@ -42,7 +44,7 @@ This assignment is meant to be a guide to exploring your data with data wranglin
 
 > **Annie**: Ideas for data-set and a few questions
 >
-> **Sam**: General discussion
+> **Sam**: Quality control
 
 # Questions
 
@@ -61,8 +63,15 @@ This assignment is meant to be a guide to exploring your data with data wranglin
 ```{r libraries}
 library(tidyverse) # add comment on package purpose..
 
-install.packages('gapminder') # "
+# Explain this (below) for Bonus (0.5 points)
+pkg_to_load <- 'gapminder'
+if (!require(pkg_to_load, character.only=T, quietly=T)) {
+    install.packages(pkg_to_load)
+    library(pkg_to_load, character.only=T)
+}
 ```
+
+*Hint for the bonus - https://stackoverflow.com/a/25409306/9049673*
 
 ### Data for this work
 
@@ -74,7 +83,7 @@ Please read the references and make sure you understand what the data generally 
 
 ### Loading data
 
-1.  Load the data from the gapminder package (0.25 points)
+1.  Load the data from the gapminder package (0 points)
 
 -   Hint: answer is written below. Explain briefly what is actually occurring and the purpose of writing it this way. **You need to explain the difference in the 3 `gapminder` words used here...**
 
@@ -112,7 +121,7 @@ Display both graphs at the same time using the `patchwork` package (*0.25 points
 
 You now wish to explore the relationship between poverty and college degrees. To do this, we create a scatterplot of `percbelowpoverty` vs. `percollege`. Color the data-points by the `inmetro` *(0.5 points)*
 
-You will need to add a new column that is `as.factor()` of the `inmetro` column to the dataset. Explain the difference between the 0 and 1.
+You will need to use `as.factor()` for the `inmetro` column.
 
 Hint: *Read about `factors`[here](https://r4ds.hadley.nz/factors.html) ; Look back at the data source to remind yourself of what the `inmetro` column stands for!*
 
@@ -120,13 +129,13 @@ Hint: *Read about `factors`[here](https://r4ds.hadley.nz/factors.html) ; Look ba
 
 ```
 
-(***Bonus 2.a.**/+0.25 points)* Why do we need to use `as.factor()` above for the `inmetro` column? Plot what happens if you don't use this and answer this question
+Why do we need to use `as.factor()` above for the `inmetro` column? Plot what happens if you don't use this and why the graph is not the most appropriate (*even though it works ok..*) to answer this question (*0.25 points)*
 
 ```{r why-factor}
 
 ```
 
-(***Bonus 2.b/**+0.25 points)* Can you modify the factor version of the inmetro column's levels to be more informative than 0 and 1?
+(***Bonus 2.b/**+0.25 points)* Can you modify the factor version of the `inmetro` column's levels to be more informative than 0 and 1? *For this, it would be best to add a new column to the dataset with factor version and use this in the ggplot* *command*
 
 ```{r modifying_factor}
 
@@ -190,7 +199,7 @@ Color the counts in the bars by state. *(0.25 point)*
 
 ### Bonus 3.b: mean for each state
 
-Find the mean for EACH STATE and repeat the above question, with the above_mean_density specific to the state the county is found in. (*1 point)*
+Find the mean for EACH STATE and repeat the above question, with the above_mean_density specific to the state the county is found in. (*0.75 point)*
 
 *Hint:* need to use `group_by()`
 
@@ -206,7 +215,7 @@ What is one of the R command that let's you do this for the gapminder data? (*0.
 
 ```
 
-Investigate the average life expectancy for the most recent year for each continent. A nice way to make tables in .Rmarkdown files or Quarto files is with the knitr package! Please look at the reference [here](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html). Make a table using the knitr table to show this data. Use head(gapminder) so you don't print all the rows (*0.5 point*).
+Investigate the average life expectancy for the most recent year for each continent. A nice way to make tables in .Rmarkdown files or Quarto files is with the `knitr::kable()` function! Please look at the reference [here](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html). Make a table using the `kable()` table to show this data. Use head(gapminder) so you don't print all the rows (*0.5 point*).
 
 *hint: the question states the most recent year, which means your code for this answer should be robust even when the data is updated!* 😄 (**Bonus 4.a/**0.5 points for doing this correctly)
 
@@ -242,7 +251,7 @@ Are the healthiest countries also the wealthiest? Answer this with top 5 numbers
 
 ## Q6: Data wrangling for real now
 
-Can you rearrange the rows to emphasize the data of countries with the poorest health outcomes in the most recent year? To answer this, arrange the data in descending order of year and ascending order of life expectancy. Once again please use the knitr package (*0.5 point)!*
+Can you rearrange the rows to emphasize the data of countries with the poorest health outcomes in the most recent year? To answer this, arrange the data in descending order of year and ascending order of life expectancy. Once again please use the `kable()` to print a pretty table (*0.5 point)!*
 
 ```{r arragement}
 
@@ -277,6 +286,10 @@ The gapminder data along with an elaborate interactive [visualization](https://w
 Watch this 20 minute [TED talk](https://www.youtube.com/watch?v=hVimVzgtD6w&t=155s) by Hans Rosling to get inspired and make any plot that strikes your creativity using the ggplot's canvas (2.5 points)
 
 In this talk, Hans Rosling, an epidemiologist by training does some magic using data visualizations and animations to turn dry data into a compelling lecture
+
+**Points:** *Creativity: 0.75, Informative: 1, Visually appealing: 0.75*
+
+*Note: Plots that are not very informative / not visually appealing will have points deducted. Also don't make too easy of a plot or too similar to other plots here!*
 
 ## Bonus 9: animating data across time
 
