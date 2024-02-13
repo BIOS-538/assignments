@@ -14,7 +14,7 @@ Assignment 4, due Saturday, midnight. *Email me if you need more time as always!
 
 **Goal:** This assignment is meant to make you get hands-on practice the R content at your own pace. Do take the time to review the slides, `.R` worksheet and re-watch lectures if you need, to recall topics mentioned in the course and the in-class activity.
 
-**Format:** Please type out your answers within R chunks in this `.qmd` (quarto markdown) script, along with comments added below the code as plain text to briefly explain your answer / steps taken. \_If relevant, make short comment next to the line of code with `#…`. Please make sure to run and test the `R` chunks in RStudio before submission. If possible, try to `knit`/`Render` the document into the `.html` output format and submit this along with the `.qmd` file on Canvas. In short: **upload the `.qmd` script + `.html` output (*optional*) as a file attachments on canvas.**
+**Format:** Please type out your answers within R chunks in this `.qmd` (quarto markdown) script, **along with comments added below or next to the code to concisely and clearly explain your answer** / steps taken. \_If relevant, make short comment next to the line of code with `#…`. **Please make sure to run and test the `R` chunks in RStudio before submission.** If possible, try to `knit`/`Render` the document into the `.html` output format and submit this along with the `.qmd` file on Canvas. In short: **upload the `.qmd` script + `.html` output (*optional*) as a file attachments on canvas.**
 
 **Make sure to change the filename to include your first name as a suffix `assignment4_.qmd`**
 
@@ -24,7 +24,7 @@ Other bonus questions make you go beyond the material covered in the class, and 
 
 ## Scope
 
-This assignment is meant to be a guide to exploring your data with tabular manipulations (`dplyr`) and visual inspection (`ggplot`). Read more about exploratory data analysis [here](https://r4ds.had.co.nz/exploratory-data-analysis.html). *The material in this homework was covered in these lectures -*
+This assignment is meant to be a guide to exploring your data with data wrangling (`dplyr`) and visual inspection (`ggplot`). Read more about exploratory data analysis [here](https://r4ds.had.co.nz/exploratory-data-analysis.html). *The material in this homework was covered in these lectures -*
 
 -   Tidyverse: class 6, 7
 
@@ -76,7 +76,7 @@ Please read the references and make sure you understand what the data generally 
 
 1.  Load the data from the gapminder package (0.25 points)
 
--   Hint: answer is written below, but you need to explain the difference in the 3 `gapminder` words used here (***Bonus 0.b.**/+0.25 points)*
+-   Hint: answer is written below. Explain briefly what is actually occurring and the purpose of writing it this way. **You need to explain the difference in the 3 `gapminder` words used here...**
 
 -   If that is too confusing, use your own method to load the data 🙂
 
@@ -92,7 +92,7 @@ gapminder <- gapminder::gapminder # what does this do?
 
 ## Q1: Histograms
 
-Create a 2 histograms, one showing `percbelowpoverty` and one showing `percollege` (% college educated) (*0.5 points)*
+Create 2 histograms, one showing `percbelowpoverty` (% of people below poverty line) and one showing `percollege` (% of people college educated) (*0.5 points)*
 
 ```{r histograms}
 
@@ -108,13 +108,11 @@ Display both graphs at the same time using the `patchwork` package (*0.25 points
 
 *Describe the patterns in the histograms in one short sentence each.* (0.25 points)
 
-(*Prelim rubric*) '\[0.25 points for each histogram\] ; '\[-0.25 if they don't explain the pattern they see\]
-
 ## Q2: Scatter plot
 
-You now wish to explore the relationship between poverty and college degrees. To do this, we create a scatterplot of `percbelowpoverty` vs. `percollege`. Color the data-points by the `inmetro` column *(0.5 points)*
+You now wish to explore the relationship between poverty and college degrees. To do this, we create a scatterplot of `percbelowpoverty` vs. `percollege`. Color the data-points by the `inmetro` *(0.5 points)*
 
-You will need to add a new column that is `as.factor()` of the `inmetro` column to the dataset and write what a 0 means and what a 1 means).
+You will need to add a new column that is `as.factor()` of the `inmetro` column to the dataset. Explain the difference between the 0 and 1.
 
 Hint: *Read about `factors`[here](https://r4ds.hadley.nz/factors.html) ; Look back at the data source to remind yourself of what the `inmetro` column stands for!*
 
@@ -160,7 +158,7 @@ Create another scatterplot, this time adding adding a geom_smooth line. (0.25 p
 
 Describe the pattern you see with the data. What story is the data telling? (*0.25 points*)
 
-### Bonus 2.c: Custmize legend 
+### Bonus 2.c: Customized legend
 
 Rename the legend for `inmetro` to be more intuitive and explanatory than 0 & 1 with a longer phrase for each if necessary (*0.25 points*)
 
@@ -168,13 +166,9 @@ Rename the legend for `inmetro` to be more intuitive and explanatory than 0 & 1 
 
 ```
 
-(*Prelim rubric*)
-
-'\[-0.25 if they color points incorrectly\] ; '\[-0.5 if they only do 1 histogram\] ; '\[-0.5 if incorrect columns used\] ; '\[-0.25 if they don't change inmetro to a factor\] ; '\[-0.5 if they dont explain the pattern they see\]
-
 ## Q3: simple barplot
 
-Find the average popdensity across all counties. Create a new column that tells if a county is above or below average population density using `mutate()`. *(name it something like above_density).* (*0.25 point*)
+Find the average population density across all counties. Create a new column that tells if a county is above or below average population density using `mutate()`. *(name it something like above_density).* (*0.25 point*)
 
 ```{r data_wrangling}
 
@@ -194,13 +188,11 @@ Color the counts in the bars by state. *(0.25 point)*
 
 ```
 
-### Bonus 3.b: mean for each state 
+### Bonus 3.b: mean for each state
 
-Find the mean for EACH STATE and repeat the above question, with rhe above_mean_density specific to the state the county is found in. (*1 point)*
+Find the mean for EACH STATE and repeat the above question, with the above_mean_density specific to the state the county is found in. (*1 point)*
 
 *Hint:* need to use `group_by()`
-
-(*Prelim rubric*) : '\[-0.25 if calculate the mean incorrectly\] ; '\[-0.25 if they do not color by state\] ; '\[-0.5 if barplot is incorrect\]
 
 ------------------------------------------------------------------------
 
@@ -214,7 +206,7 @@ What is one of the R command that let's you do this for the gapminder data? (*0.
 
 ```
 
-Investigate the average life expectancy for the most recent year for each continent. Make a table to show this data (*0.5 point*)
+Investigate the average life expectancy for the most recent year for each continent. A nice way to make tables in .Rmarkdown files or Quarto files is with the knitr package! Please look at the reference [here](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html). Make a table using the knitr table to show this data. Use head(gapminder) so you don't print all the rows (*0.5 point*).
 
 *hint: the question states the most recent year, which means your code for this answer should be robust even when the data is updated!* 😄 (**Bonus 4.a/**0.5 points for doing this correctly)
 
@@ -250,7 +242,7 @@ Are the healthiest countries also the wealthiest? Answer this with top 5 numbers
 
 ## Q6: Data wrangling for real now
 
-Can you rearrange the rows to emphasize the data of countries with the least health outcomes in the latest year? To answer this, arrange the data in descending order of year and ascending order of life expectancy (*0.5 point)*
+Can you rearrange the rows to emphasize the data of countries with the poorest health outcomes in the most recent year? To answer this, arrange the data in descending order of year and ascending order of life expectancy. Once again please use the knitr package (*0.5 point)!*
 
 ```{r arragement}
 
@@ -278,15 +270,15 @@ Let us investigate the relationship between **health** and **wealth** of the cou
 
 ```
 
-## Q8: The canvas is yours 
+## Q8: The canvas is yours
 
-The gapminder data along with an elaborate interactive [visualization ](https://www.gapminder.org/tools/#$chart-type=bubbles&url=v1)tool is operated by the gapminder foundation (<https://www.gapminder.org/>).
+The gapminder data along with an elaborate interactive [visualization](https://www.gapminder.org/tools/#$chart-type=bubbles&url=v1)tool is operated by the gapminder foundation (<https://www.gapminder.org/>).
 
 Watch this 20 minute [TED talk](https://www.youtube.com/watch?v=hVimVzgtD6w&t=155s) by Hans Rosling to get inspired and make any plot that strikes your creativity using the ggplot's canvas (2.5 points)
 
 In this talk, Hans Rosling, an epidemiologist by training does some magic using data visualizations and animations to turn dry data into a compelling lecture
 
-## Bonus 9: animating data across time 
+## Bonus 9: animating data across time
 
 Similar to the plots you saw in the TED talk, add animations to make your plots update for the data across years using the `gganimate` package (2 points)
 
