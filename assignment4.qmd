@@ -2,11 +2,16 @@
 title: "Assignment4"
 format: html
 editor: visual
+output-dir: rendered
 ---
 
 Assignment 4, due Saturday, midnight. *Email me if you need more time as always!*
 
-Changelog: Mon_12/2/24: \[bonus on installing packages, fixed typos, clarified factors, Kable printing\]
+**Changelog**:
+
+-   Mon_12/2/24: \[bonus on installing packages, fixed typos, clarified factors, Kable printing\]
+
+-   Fri_16/Feb/24: \[stylistic only, optional version\]: Added coloured divs for explanations for easier grading
 
 # **Instructions**
 
@@ -54,9 +59,17 @@ This assignment is meant to be a guide to exploring your data with data wranglin
 
 -   *Explain why we need to use* `library()` *command in one sentence with a citation;*
 
+::: {.class style="color: firebrick"}
+Write explanation here
+:::
+
 -   *where is* `install.packages()` *installing the gapminder package from?*
 
     -   *Hint: Which of these two commands do you require the internet to run?*
+
+::: {.class style="color: firebrick"}
+Write explanation here
+:::
 
 -   Complete the comments next to the code in the `R` chunk below
 
@@ -86,6 +99,10 @@ Please read the references and make sure you understand what the data generally 
 1.  Load the data from the gapminder package (0 points)
 
 -   Hint: answer is written below. Explain briefly what is actually occurring and the purpose of writing it this way. **You need to explain the difference in the 3 `gapminder` words used here...**
+
+::: {.class style="color: firebrick"}
+Write explanation here
+:::
 
 -   If that is too confusing, use your own method to load the data 🙂
 
@@ -117,6 +134,10 @@ Display both graphs at the same time using the `patchwork` package (*0.25 points
 
 *Describe the patterns in the histograms in one short sentence each.* (0.25 points)
 
+::: {.class style="color: firebrick"}
+Write explanation here
+:::
+
 ## Q2: Scatter plot
 
 You now wish to explore the relationship between poverty and college degrees. To do this, we create a scatterplot of `percbelowpoverty` vs. `percollege`. Color the data-points by the `inmetro` *(0.5 points)*
@@ -130,6 +151,10 @@ Hint: *Read about `factors`[here](https://r4ds.hadley.nz/factors.html) ; Look ba
 ```
 
 Why do we need to use `as.factor()` above for the `inmetro` column? Plot what happens if you don't use this and why the graph is not the most appropriate (*even though it works ok..*) to answer this question (*0.25 points)*
+
+::: {.class style="color: firebrick"}
+Write explanation here
+:::
 
 ```{r why-factor}
 
@@ -167,6 +192,10 @@ Create another scatterplot, this time adding adding a geom_smooth line. (0.25 p
 
 Describe the pattern you see with the data. What story is the data telling? (*0.25 points*)
 
+::: {.class style="color: firebrick"}
+Write explanation here
+:::
+
 ### Bonus 2.c: Customized legend
 
 Rename the legend for `inmetro` to be more intuitive and explanatory than 0 & 1 with a longer phrase for each if necessary (*0.25 points*)
@@ -185,7 +214,7 @@ Find the average population density across all counties. Create a new column tha
 
 Create a barplot that shows how many counties are above and below the average. *Hint: you should have 2 boxes (0.25 point)*
 
-(***Bonus 3.a.**/+0.25 points)* Overlay text near the bar with the value indicated by the bar using `geom_text`/other annotations (reference: [R4ds book](https://r4ds.hadley.nz/communication.html#annotations))
+*(**Bonus 3.a.**/+0.25 points)* Overlay text near the bar with the value indicated by the bar using `geom_text`/other annotations (reference: [R4ds book](https://r4ds.hadley.nz/communication.html#annotations))
 
 ```{r barplot}
 
@@ -244,6 +273,10 @@ Are the healthiest countries also the wealthiest? Answer this with top 5 numbers
 
 *Hint: Health \~ Life expectancy ; Wealth \~ GDP per capita. We are expecting data / graph + one line of analysis/commentary here.*
 
+::: {.class style="color: firebrick"}
+Write explanation here
+:::
+
 ```{r healthy_wealthly_and_wise}
 
 
@@ -291,11 +324,19 @@ In this talk, Hans Rosling, an epidemiologist by training does some magic using 
 
 *Note: Plots that are not very informative / not visually appealing will have points deducted. Also don't make too easy of a plot or too similar to other plots here!*
 
+::: {.class style="color: firebrick"}
+Write explanation here: Why you plotted this/what information does it add?
+:::
+
 ## Bonus 9: animating data across time
 
 Similar to the plots you saw in the TED talk, add animations to make your plots update for the data across years using the `gganimate` package (2 points)
 
 *Rubric: No documentation of sources loses 1 point here.*
+
+::: {.class style="color: firebrick"}
+Document your sources here
+:::
 
 ## Extras
 
@@ -313,6 +354,14 @@ For the questions, I would like to acknowledge these sources of inspiration
 
 -   Annie's questions on `midwest` data
 
+-   Nice list of [css colours](https://duckduckgo.com/?t=ffab&q=css+colours&ia=answer&iax=answer) to format a `.class` of text in a particular colour to distinguish it from questions
+
 For the solutions
 
-..
+::: {.class style="color: firebrick"}
+Your attributions here
+:::
+
+::: {style="color: teal"}
+Space for TA/grader comments here!
+:::
