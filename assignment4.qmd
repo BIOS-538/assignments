@@ -1,7 +1,9 @@
 ---
 title: "Assignment4"
 format: html
-editor: visual
+editor: 
+  visual:
+    embed-resource: true
 output-dir: rendered
 ---
 
@@ -12,6 +14,8 @@ Assignment 4, due Saturday, midnight. *Email me if you need more time as always!
 -   Mon_12/2/24: \[bonus on installing packages, fixed typos, clarified factors, Kable printing\]
 
 -   Fri_16/Feb/24: \[stylistic only, optional version\]: Added coloured divs for explanations for easier grading
+
+-   Thurs_22/2/24: Clarify rendering as a self-contained `.html`; Q6: filter by year and then arrange; Q9: suggested animate Q7's plot
 
 # **Instructions**
 
@@ -284,7 +288,7 @@ Write explanation here
 
 ## Q6: Data wrangling for real now
 
-Can you rearrange the rows to emphasize the data of countries with the poorest health outcomes in the most recent year? To answer this, arrange the data in descending order of year and ascending order of life expectancy. Once again please use the `kable()` to print a pretty table (*0.5 point)!*
+Can you rearrange the rows to emphasize the data of countries with the poorest health outcomes in the most recent year? To answer this, `filter` the data for the most recent year, and `arrange` it in ascending order of life expectancy. Remember to only print a small subset of the table using `head` (*0.5 point)*
 
 ```{r arragement}
 
@@ -296,7 +300,7 @@ We would like to see a similar view for the least healthy countries in each cont
 
 ```
 
-Now subset the data to get the 5 least healthy countries in each continent (*0.5 points*)
+Now subset the data to get the 5 least healthy countries in each continent. hint: use `slice_max()` (*0.5 points*)
 
 ```{r unhealthy5}
 
@@ -330,7 +334,9 @@ Write explanation here: Why you plotted this/what information does it add?
 
 ## Bonus 9: animating data across time
 
-Similar to the plots you saw in the TED talk, add animations to make your plots update for the data across years using the `gganimate` package (2 points)
+Similar to the plots you saw in the TED talk, add animations to make your plot update for the data across years using the `gganimate` package (2 points)
+
+You can chose any plot for this excersise. I would recommend the scatter plot from Q7.
 
 *Rubric: No documentation of sources loses 1 point here.*
 
