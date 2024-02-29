@@ -28,7 +28,7 @@ Others/more basic?
 
 # Question ideas
 
-## 1. Check your understanding (5 x [1 point]{style="color: red;"} for each question)
+## 1. Check your understanding ([1 point]{style="color: red;"} for each question)
 
 ### *1a. Quarto vs `.R`*
 
@@ -42,7 +42,7 @@ Make 2 R chunks for
 
 -   Showing how to add comments to your code (# ..)
 
--   How to add documentation for a function using docstrings (#' ..)
+-   How to add documentation for a function using the docstrings package (#' ..)
 
 ### *1c. Troubleshooting*
 
@@ -64,48 +64,58 @@ getwd()
 
 *What is a package in R? How do you install and load packages? How do you find the documentation for a package? BONUS: How can you download a package that is not on CRAN? (for example, on github)*
 
-```{r loading-packages}
+```{r loading-packages, warnings = FALSE}
 library(tidyverse)
 ```
 
 ## 2. Creating datasets.
 
-### 2a. Make a tibble
+### 2a. Make a tibble [(1 point)]{style="color: red;"}
 
-Let's create datasets. First, create a tibble of 6 different names, one column of first names and another column of last names, you can choose any names you want. [(*1 point*)]{style="color: red;"}
+Let's create datasets. First, create a tibble from the vectors below. The named column order of the tibble should be :
+
+-   the first names
+
+-   the last names
 
 ```{r}
-
-
-
+first_names <- c("Albert", "Jane", "Linus", "Carl", "George", "Jennifer")
+last_names <- c("Einstein", "Goodal", "Pauling", "Marx", "Church", "Doudna")
 
 ```
 
-### 2b. Adding a column
+### 2b. Adding a column [(2 *points*)]{style="color: red;"}
 
-Now, using a `mutate()` call, assign an age between 20-45 for each person, as another column to your data. There are multiple approaches you can use to do this. (2 pts)
+Now, using a `mutate()` call, randomly assign an age **as an integer** between 30-85 for each person, as another column to your data called **age**. There are multiple approaches you can use to do this. **Do not touch the set seed argument, that is for grading.**
 
 ```{r}
-
+set.seed(2292025) #Do not edit!
+df %>%
+  mutate(age = as.integer(runif(6, min = 30, max = 70)))
 ```
 
-### 2c. Function with if else statements
+### 2c. Function with if else statements [(4 points, 2 per code chunk)]{style="color: red;"}
 
 *(note) think about which is better for this question: if_else vs case_when here)*
 
-Finally, create a function that will tell you the favorite food of the person by taking their name as an argument. To do this, use if else statements and indexing of the dataset to compare ages. If someone is 20-29, their favorite food is fries. If they are 30-39, their favorite food is ice cream. If someone is 40 or older, their favorite food is pizza. [(2 *points*)]{style="color: red;"}
+Finally, create a function that will tell you the favorite scientist of the person by taking their name as an argument. To do this, use if else statements and indexing of the dataset to compare ages. The function should return "the favorite scientist of 'scientist from tibble' is ... ". If someone is 30-39, their favorite scientist is Francis Arnold. If they are 40-49, their favorite scientist is Louis Pasteur. If someone is older than 49, their favorite food is Isaac Newton.
 
--   Do the same using use [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) in a vectorized workflow?
+-   Do the same using use [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) in a vectorized workflow? (***Look up documentation if you are uncertain!)***
 
 ```{r}
+#For Loop
 
+```
+
+```{r}
+#Case_When()
 ```
 
 ## 3. Working with existing datasets.
 
-### 3a. Know thy data
+### 3a. Know thy data [(1 point)]{style="color: red;"}
 
-We will be working with data about sleeping mammals. Write 1-2 sentences describing what the dataset contains and what the columns mean. [(*1 point*)]{style="color: red;"}
+We will be working with data about sleeping mammals. Write 1-2 sentences describing what the dataset contains and what the columns mean.
 
 <https://rdrr.io/cran/ggplot2/man/msleep.html>
 
@@ -117,11 +127,17 @@ sleeping_data <- msleep
 sleeping_data 
 ```
 
-### 3b. Scatter plot
+### 3b. Scatter plot [(6 point)]{style="color: red;"}
 
-Next, create a scatterplot using the "sleep_total" column and the "bodywt" column. Color the data points by "vore" (this describes the diet of the species). Make the legend, axes, and labels pretty and easily interpretable (pick any color scheme you want). Add a best fit line. (hint. if the graph looks weird, try log transforming a variable)
+Next, create a scatterplot using the "sleep_total" column and the "bodywt" column. Color the data points by "vore" column (this describes the diet of the species).
 
-#### 3b1. Do any patterns emerge? [(*1 point*)]{style="color: red;"}
+Make the legend caption say "Diet"
+
+Make the x axis "Log of body weight"
+
+Make the y axis "Total Sleep"
+
+Make the size of the dots the size of "brainwt". Add a best fit regression line. (hint. if the graph looks weird, try log transforming the bodywt variable)
 
 ##### (note: some data points will be removed. that is ok)
 
@@ -129,48 +145,65 @@ Next, create a scatterplot using the "sleep_total" column and the "bodywt" colum
 ggplot(sleeping_data,
        aes(x = log(bodywt),
            y = sleep_total)) + 
-  geom_point(sleeping_data,mapping=aes(color=vore))
+  geom_point(sleeping_data,mapping=aes(color=vore))+
+  theme_bw()
 ```
 
-#### 3b2. Reason for the pattern
-
-Using internet search engines, find (and cite) a source that helps explain the pattern we are seeing with biological information. [(*1 point*)]{style="color: red;"}
-
-## 4. What is a p-value really?
-
-Remember to cite any sources you use. Explain what a p-value is and the common misconceptions about them. Why are p-values criticized? What are alternatives we can use? What is your opinion on p-values? (5 points. Your answer must discuss each topic above and should be 4-6 sentences long)
-
--   *(note) The question is too broad and loaded ; we shall pair it down - PK*
-
-## 5. Bring your data (5 points)
-
-Finding data to work with [(*5 points*)]{style="color: red;"}
-
-Citing your sources, similar to what we did in class, find a figure from a paper and interpret what it is showing. Add the image into the Markdown file and also upload it to canvas, or add a link to the paper and write which figure it is. Recreate this figure in R in a way that you deem easier to understand. What challenges do you think scientists and authors have when creating and publishing figures that makes it difficult to always make a "proper" figure? (hint: google the term "publish or perish")
+**3b3. Make the same plot, but facet based on "vore"**
 
 ```{r}
 
 ```
 
-## 6. Vectorized function (6 points)
+#### 3b2. Do any patterns emerge, how strong is the relationship? If you think there is a relationship, using logic, why do you think this occurs? If you don't think there is a relationship, why do you think there is no relationship? [(2 *point*)]{style="color: red;"}
+
+## 4. What is a p-value really? [(5 points)]{style="color: red;"}
+
+Remember to cite any sources you use. Explain what a p-value is and the common misconceptions about them. Why are p-values criticized? What are ways to improve your certainty that the p-value is the result of a signicant difference? **Your answer must discuss each topic above and should be 4-6 sentences long)**
+
+## 5. Bring your data [(10 points)]{style="color: red;"}
+
+*this is near impossible we need to give them a set of a datasets to work from. Increased point total. How do we grade this if they work together and make the same plot? -Sam*
+
+Citing your sources, similar to what we did in class, find a figure from a paper and interpret what it is showing. Add the image into the Markdown file and **also upload it to canvas, or add a link to the paper and write which figure** it is. Recreate this figure in R in a way that you deem easier to understand. What challenges do you think scientists and authors have when creating and publishing figures that makes it difficult to always make a "proper" figure? (hint: google the term "publish or perish")
+
+\^\^\^ "proper" figure question is convoluted, I am not sure what answer you would want from them
+
+```{r}
+
+```
+
+## 6. Vectorized function [(6 points)]{style="color: red;"}
 
 -   Write a function that takes two or more numbers and adds them, called `plus`. [(*1 point*)]{style="color: red;"}
 
+    ```{r}
+
+    ```
+
 -   Modify this function now such that it can also take `characters` (instead of numbers), and combines them using the `cat()` function. [(*2 points*)]{style="color: red;"}
 
--   Now either modify this function or encompass this within another function (call it `vector_plus`) to work when the arguments provided are vectors (*of the same length*) rather than single objects. This function should output a vector of the same size as each of the input arguments. This should also return an informative error message when the vectors are not of the same length. [(*3 point*)]{style="color: red;"}
+    ```{r}
 
-Note: For all the prompts above, call your function and show us the result for each clause provided
+    ```
+
+-   Now either modify this function or encompass this within another function (call it `vector_plus`) to work when the arguments provided are vectors (*of the same length*) rather than single objects. **This function should output a vector of the same size as each of the input arguments**. This should also return an informative error message when the vectors are not of the same length. [(*3 point*)]{style="color: red;"}
+
+    ```{r}
+
+    ```
+
+Note: For all the prompts above, **call your function** and **show us the result for each clause** provided
 
 ## 7. Vectorize anything [(3 points)]{style="color: red;"}
 
--   Use a `for` loop to print the data type of each column in a tibble (*use a data from above*) [(*0.5 point*)]{style="color: red;"}
+-   Use a `for` loop to print the data type of each column in a tibble (**use sleeping_data from above**) [(*0.5 point*)]{style="color: red;"}
 
 -   Do the same now using vectorization instead of a loop - using the `map()` function (or any other such function). [(*2 point*)]{style="color: red;"}
 
     -   *Document your sources including which package this function is from* [(*0.5 point*)]{style="color: red;"}
 
-    > (*goal*) do a for loop approach and purrr::map() based vectorization 1 with a dplyr workflow (map was not discussed but a goal here is to learn new functions from their documentation..// this should not be a bonus?)
+    > (*goal*) do a for loop approach and purrr::map() based vectorization 1 with a dplyr workflow (map was not discussed but a goal here is to learn new functions from their documentation..// this should not be a bonus?) - *I think a bonus is best - Sam*
 
 ## 8. Plot multiple columns [(*5 points*)]{style="color: red;"}
 
@@ -183,4 +216,13 @@ df <- tibble(x = 1:10, y1 = x, y2 = x^2, y3 = x^3)
 
 -   Use `pivot_wider()` to reshape the data and make a similar `ggplot` with different colours [(2+*1 points*)]{style="color: red;"} (learn how to use the `pivot_wider()` function from documentation and cite your sources)
 
-    -   (bonus) Discuss how this pivot_wider approach would be helpful compared to the previous approach [(*1 point*)]{style="color: red;"}
+    -   (bonus) Discuss how this pivot_wider approach would be helpful compared to the previous approach [(*1 point*)]{style="color: red;"}8. Plot multiple columns [(*5 points*)]{style="color: red;"}
+
+## 9. Troubleshooting [(6 *points,* ]{style="color: red;"} 2 per question[)]{style="color: red;"}
+
+The following three code chunks do not. In simple language tell us why they do not work and then rewrite the function to make the code chunk work.
+
+```{r}
+#This code chunk should take the 
+
+```
