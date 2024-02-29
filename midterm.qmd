@@ -1,0 +1,85 @@
+---
+title: "Midterm Qs Ideas"
+format: html
+editor: visual
+---
+
+## Midterm Ideas - 5 Questions
+
+### 1. Questions to check your understanding (5 points, 1 for each question)
+
+#### *A. Explain in your own words what an R Markdown/Quarto file is compared to a normal R script. Give one benefit of using these types of files.*
+
+#### *B. Why do we use documentation for our code? What is the importance of this?*
+
+#### *C. Name three ways to troubleshoot error messages. What is your workflow when R gives an error?*
+
+#### *D. Describe what a working directory is, why R needs us to define it, and write the function to find the current working directory in R.*
+
+#### *E. What is a package in R? How do you install and load packages? How do you find the documentation for a package? BONUS: How can you download a package that is not on CRAN?*
+
+### 2. Creating datasets. 
+
+#### Let's create datasets. First, create a tibble of 6 different names, one column of first names and another column of last names, you can choose any names you want. (1 pt)
+
+```{r}
+
+
+
+
+```
+
+#### Now, using a for loop, assign an age between 20-45 for each person, adding this as another column to your data. There are multiple approaches you can use to do this. (2 pts)
+
+```{r}
+
+```
+
+#### Finally, create a function that will tell you the favorite food of the person by taking their name as an argument. To do this, use if else statements and indexing of the dataset to compare ages. If someone is 20-29, their favorite food is fries. If they are 30-39, their favorite food is ice cream. If someone is 40 or older, their favorite food is pizza. (2pts)
+
+```{r}
+
+```
+
+### 3. Working with existing datasets. 
+
+#### We will be working with data about sleeping mammals. Write 1-2 sentences describing what the dataset contains and what the columns mean. (1 pt)
+
+<https://rdrr.io/cran/ggplot2/man/msleep.html>
+
+```{r}
+library(ggplot2)
+
+
+sleeping_data <- msleep
+sleeping_data 
+```
+
+#### Next, create a scatterplot using the "sleep_total" column and the "bodywt" column. Color the data points by "vore"  (this describes the diet of the species). Make the legend, axes, and labels pretty and easily interpretable (pick any color scheme you want). Add a best fit line. (hint. if the graph looks weird, try log transforming a variable)
+
+#### Do any patterns emerge? (3 pts) 
+
+##### (note: some data points will be removed. that is ok)
+
+```{r}
+ggplot(sleeping_data,
+       aes(x = log(bodywt),
+           y = sleep_total)) + 
+  geom_point(sleeping_data,mapping=aes(color=vore))
+```
+
+#### Using google, find (and cite) a source that helps explain the pattern we are seeing with biological information. (1 pt)
+
+### 4. What is a p-value really?
+
+#### Remember to cite any sources you use. Explain what a p-value is and the common misconceptions about them. Why are p-values criticized? What are alternatives we can use? What is your opinion on p-values? (5 points. Your answer must discuss each topic above and should be 4-6 sentences long)
+
+### 5.  Finding data to work with 
+
+#### Citing your sources, similar to what we did in class, find a figure from a paper and interpret what it is showing. Add the image into the Markdown file and also upload it to canvas, or add a link to the paper and write which figure it is. Recreate this figure in R in a way that you deem easier to understand. What challenges do you think scientists and authors have when creating and publishing figures that makes it difficult to always make a "proper" figure? (hint: google the term "publish or perish") (5pts)
+
+```{r}
+
+```
+
+#### 
