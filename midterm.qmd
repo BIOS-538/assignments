@@ -40,7 +40,9 @@ Emphasis will be on the later half that uses the more efficient vectorized funct
 
 ## Resources
 
-Use this [section](https://r4ds.hadley.nz/quarto.html#visual-editor) for a refresher if you are having trouble navigating the quarto file, or doing actions making a code chunk etc.
+1.  Use this [section](https://r4ds.hadley.nz/quarto.html#visual-editor) for a refresher if you are having trouble navigating the quarto file, or doing actions making a code chunk etc.
+2.  [Interactive tutorial](https://allisonhorst.shinyapps.io/dplyr-learnr/) to brush up `dplyr` functions such as `mutate()`, `filter()`, `arrange()` and others. I strongly recommend going through this exercise step-by-step for gaining confidence. Link - <https://allisonhorst.shinyapps.io/dplyr-learnr/>
+3.  Markdown formatting [cheatsheet](https://www.markdownguide.org/cheat-sheet/)
 
 ## Points distribution
 
@@ -241,11 +243,7 @@ Make the size of the dots the size of "brainwt". Add a best fit regression line.
 ##### (note: some data points will be removed. that is ok)
 
 ```{r}
-ggplot(sleeping_data,
-       aes(x = log(bodywt),
-           y = sleep_total)) + 
-  geom_point(sleeping_data,mapping=aes(color=vore))+
-  theme_bw()
+
 ```
 
 ### 3b.2. Add facet based on "vore" [(2 points)]{style="color: red;"}
@@ -314,33 +312,6 @@ ggplot(sleeping_data, aes(order, sleep_total)) +
          geom_bar(stat = 'identity') + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
   
-# improved plot
-library(ggtext)
-
-sldat <- arrange(sleeping_data, sleep_total) %>% 
-  mutate(order = fct_inorder(order)) %>% 
-  group_by(order) %>% mutate(counts = n())
-
-# re-formatted plot
-ggplot(sldat, aes(sleep_total, order)) + 
-         
-  geom_boxplot() + 
-  geom_point(alpha = 0.3, position = position_jitter(height = 0.2)) + 
-  
-  # add text
-  geom_text(aes(label = counts, x = 0)) + 
-  
-  # axis labels
-  labs(title = 'Mammals **_sleep duration_** changes across **_orders_** with a wide variation', 
-       subtitle = 'Number of members in each order specified next to the y-axis',
-       x = 'Sleep duration per day (hours)',
-       y = NULL) + 
-  
-  # title positioning and formatting
-  theme(title = ggtext::element_markdown(),
-        plot.title.position = 'plot')
-
-ggsave('../../outputs/sleep_barplot.png', width = 6, height = 5)
 ```
 
 Find the target plot that you want to work towards as an attachment on canvas `sleep_barplot.png`
@@ -369,6 +340,7 @@ Hints :
 5.  modifying title position in `theme()` [(1 point)]{style="color: red;"}
 
 ```{r improved-plot}
+# improved plot
 
 ```
 
@@ -391,7 +363,7 @@ Make the words in the title text referring to the x and y axis to be distinguish
 -   Modify this function now such that it can also take `characters` (instead of numbers), and combines them using the `cat()` function. [(*2 points*)]{style="color: red;"}
 
     ```{r}
-
+    #
     ```
 
 -   Now either modify this function or encompass this within another function (call it `vector_plus`) to work when the arguments provided are vectors (*of the same length*) rather than single objects. **This function should output a vector of the same size as each of the input arguments**. [(*3 points*)]{style="color: red;"}
@@ -401,7 +373,7 @@ Make the words in the title text referring to the x and y axis to be distinguish
 Use the necessary function that stops the code and returns an informative [error message](https://stackoverflow.com/a/12723837/9049673) when the vectors are not of the same length (*since you can't do one-to-one computation with them*).
 
 ```{r}
-
+# 
 ```
 
 Note: For all the prompts above, **call your function** and **show us the result for each clause** provided
