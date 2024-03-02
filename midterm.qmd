@@ -14,9 +14,13 @@ editor: visual
 
 -   
 
--   Minor points
+-   Minor concepts
 
     -   Why does assignment hide the result of the calculation; show two contexts where you see this (within other functions)
+    -   Subsetting A\[x\] vs A\[\[x\]\]
+    -   working directory when loading data. How it differs between `qmd` scripts and (`R` scripts/ console)
+    -   ggplot - where to write the aes (`ggplot` vs `geom_..` ) and what to write inside of the `aes()`
+    -   
 
 Others/more basic?
 
