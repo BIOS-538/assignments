@@ -14,11 +14,13 @@ Space for TA/grader comments here!
 (Note to TAs: copy this in the middle of the code for more elaborate comments)
 :::
 
+**Change log**: 2/Mar/24, 1 pm. Updated points to 60 total (previously 55) adding questions 1e2, 1f, 4.d
+
 ## Prologue
 
-This exam is meant to test these topics you have learnt in the last two months while serving as practice to brush up these concepts. We anticipate this to be at the same complexity/time commitment as a homework assignment, **more weightage** will be given for providing short explanations(and **documentation** in code) that **demonstrate that you understand** what the R code you wrote does.
+This exam is meant to test these topics you have learnt in the last two months while serving as practice to brush up these concepts. We anticipate this to be at the same complexity/time commitment as a homework assignment, **25% of the points** will be given in each question involving `R` for providing short explanations (and **documentation** in code) that **demonstrate that you understand** what the R code you wrote does.
 
-Please remember that **there are many ways of answering the questions**, and all approaches are valid for grading. *If you tried and couldn't answer any question, partial points will be given if you add enough explanation to indicate that you are on the right path.* If you are having trouble understanding or interpreting any question, please do reach out to the TAs/discuss with peers/post on the discussion board.
+Please remember that **there are many ways of answering the R questions**, and all approaches are valid for grading. *If you tried and couldn't answer any question, partial points will be given if you add enough explanation to indicate that you are on the right path.* If you are having trouble understanding or interpreting any question, please do reach out to the TAs/discuss with peers/post on the discussion board/come to office hours. If you **need extra time** to do this exam **for any reason** please don't hesitate to email Prashant with the subject `BIOS 538:`
 
 Emphasis will be on the later half that uses the more efficient vectorized functions from the `tidverse` ecosystem, contrasting this to more verbose approaches such as `for ()` loops and `if ().. else` statements from the first few lectures. These are the learning goals from this exam:
 
@@ -26,17 +28,7 @@ Emphasis will be on the later half that uses the more efficient vectorized funct
 
 -   Vectorization is better than for loops : a) in a normal function b) within a dplyr chain
 
--   Making informative plots with proper axis labels, titles, and annotations is handy to communicate well.
-
--   Minor concepts
-
-    -   Why does assignment hide the result of the calculation; show two contexts where you see this (within other functions)
-    -   Subsetting a\[i\] vs a\[\[i\]\]
-    -   ggplot - where to write the aes (`ggplot` vs `geom_..` ) and what to write inside of the `aes()`
-    -   (extra) Get people to generate and plot a normal distribution along with mean/SD?
-    -   Q4 \~ replace with a galton like simulation (of calculating means)
-    -   Q4 : bonus \~ show t.test results from 3 comparison samples with different expected results
-    -   Q5 \~ Figure transform to something better // vs re-create a figure from a paper (probably won't be as good?)
+-   Making informative plots with proper axis labels, titles, orientation and annotations is handy to communicate more effectively.
 
 ## Resources
 
@@ -46,10 +38,10 @@ Emphasis will be on the later half that uses the more efficient vectorized funct
 
 ## Points distribution
 
-|       | Q0  | Q1  | Q2  | Q3  | Q4  | Q5  | Q6  | Q7  | Q8  | sum |
-|-------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| Reg   | \-  | 9   | 7   | 9   | 6   | 10  | 6   | 3   | 5   | 55  |
-| Bonus | 1+2 | 1   |     |     |     | 2   | 2   | 3   | 1   | 12  |
+|       | 0       | Q1  | Q2  | Q3  | Q4  | Q5  | Q6  | Q7  | Q8  | sum |
+|-------|---------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Reg   | \-      | 10  | 7   | 9   | 8   | 12  | 6   | 3   | 5   | 60  |
+| Bonus | 1+2 + 1 | 2   |     |     |     | 2   | 2   | 3   | 1   | 14  |
 
 ```{r loading-packages, warnings = FALSE}
 library(tidyverse) # for dplyr, pipe and ggplot stuff
@@ -65,7 +57,7 @@ Follow these best practices when writing your code and text for the document for
 
 -   Ensure your code is [tidyverse style guide](https://style.tidyverse.org/syntax.html) compliant to make it more readable by incorporating the tips; or use the [styler](https://r4ds.hadley.nz/workflow-style) to automatically do this before submission. For example:
 
-    -   spaces after the \# .. for comments
+    -   spaces after the `# ..` for comments
 
     -   spaces before the `+` for `ggplot(..) +`
 
@@ -84,9 +76,9 @@ ggplot(df,
 
 ```
 
-## 1. Check your understanding [(9+1 point)]{style="color: red;"}
+## 1. Check your understanding [(10 points)]{style="color: red;"}
 
-(\~ [1 point]{style="color: red;"} for each question + 1 bonus)
+(\~ [1 point]{style="color: red;"} for each question x 10 + 2 bonus)
 
 ### *1a. Quarto vs `.R`*
 
@@ -148,7 +140,7 @@ Answer here!
 
 Demonstrate the loading of a `csv` file by writing a path relative to (starting from) R's current working direcotory in an R chunk below. Discuss the convenience of this compared to an [absolute path](https://networkencyclopedia.com/absolute-path/)
 
-### 1d.bonus. working directory vs quarto [(+1 point)]{style="color: red;"}
+### 1d.3. bonus. working directory vs quarto [(+1 point)]{style="color: red;"}
 
 How does the working directory differ between `.qmd` scripts and normal `.R` scripts/`Console`. Demonstrate this by calling the function to know the working dir and add screenshots
 
@@ -156,7 +148,27 @@ How does the working directory differ between `.qmd` scripts and normal `.R` scr
 
 ### 1e. R packages
 
-What is a package in R? How do you install and load packages? How do you find the documentation for a package? BONUS: How can you download a package that is not on CRAN? (for example, on github)
+What is a package in R? How do you install and load packages? How do you find the documentation for a package?
+
+### 1e.2.bonus: Install R package form github
+
+BONUS: How can you install a package that is not on CRAN? (for example, on github) ; *there's a direct function or a more manual approach, show either of these approaches for the* `ggbeeswarm` *package*
+
+```{r install-from-github}
+#
+```
+
+### 1f. assigning to a variable vs not
+
+Explain why does assignment hide the result of the calculation in R, find a citation for this statement. Demonstrate two contexts where you observe this behavior
+
+::: {.class style="color: firebrick;"}
+Answer here!
+:::
+
+```{r}
+# 
+```
 
 ## 2. Creating datasets. [(7 point)]{style="color: red;"}
 
@@ -266,7 +278,7 @@ Do any patterns emerge, how strong is the relationship? If you think there is a 
 Answer here!
 :::
 
-## 4. Troubleshooting [(6 *points,*]{style="color: red;"} 2 per question[)]{style="color: red;"}
+## 4. Troubleshooting [(8 *points,*]{style="color: red;"} 2 per question[)]{style="color: red;"}
 
 The following three code chunks do not work. In simple language tell us
 
@@ -291,9 +303,17 @@ if(x > 10) {
  }
 ```
 
+::: {.class style="color: firebrick;"}
+Answer here!
+:::
+
 ```{r troubleshoot-2}
 rnorm(n = 3, var = 1)
 ```
+
+::: {.class style="color: firebrick;"}
+Answer here!
+:::
 
 ```{r troubleshoot-3}
 gender <- factor(c("female", "female", "male", "female", "male"))
@@ -301,7 +321,20 @@ gender <- factor(c("female", "female", "male", "female", "male"))
 Mean(gender)
 ```
 
-## 5. Make a better ggplot [(10 points)]{style="color: red;"}
+*There are also certain scenarios where the code gives no error but it just doesn't do what you would expect it to do, the example below is in this category. You need to understand the intent of this code, explain why it doesn't do the intended thing and fix it..*
+
+```{r troubleshoot-4}
+a <- tibble(a1 = -5:10, a2 = exp(a1))
+
+ggplot(a, aes(a1, a2, colour = 'blue')) + 
+  geom_point() + geom_line()
+```
+
+::: {.class style="color: firebrick;"}
+Answer here!
+:::
+
+## 5. Make a better ggplot [(12 points)]{style="color: red;"}
 
 This is a beginner plot that tries to explore how each mammal's sleep duration depends on their phylogenetic order. Your goal is to improve this plot to make it easier to grasp + more informative!
 
@@ -316,15 +349,17 @@ ggplot(sleeping_data, aes(order, sleep_total)) +
 
 Find the target plot that you want to work towards as an attachment on canvas `sleep_barplot.png`
 
-### 5a. Discuss visual choices [(4 points)]{style="color: red;"}
+### 5a. Discuss visual choices [(5 points)]{style="color: red;"}
 
-Contrast the output of the initial barplot with the desired final plot and make 3 brief observations to answer - In what aspects is latter better than the former?
+Contrast the output of the initial barplot with the desired final plot and make 5 brief observations to answer - ***In what aspects is latter better than the former?***
+
+*Hints:* [barbarplots](https://thenode.biologists.com/barbarplots/photo/); [horizontal bars](https://www.storytellingwithdata.com/blog/2012/10/my-penchant-for-horizontal-bar-graphs); William Chases' glamour of graphics [talk](https://www.youtube.com/watch?v=h5cTacaWE6I),
 
 ![](https://imgur.com/MT92oYy)
 
 ![](../../outputs/sleep_barplot.png)
 
-### 5b. Improve the plot [(6 points)]{style="color: red;"}
+### 5b. Improve the plot [(7 points)]{style="color: red;"}
 
 Now, try to improve the plot to tend towards the desired plot step by step. You can either do it in a single chunk or use multiple chunks with each step being added serially.
 
@@ -334,7 +369,7 @@ Hints :
 
 1.  replace bar with boxplot, flip the coordinates so that labels are not tilted anymore [(1 point)]{style="color: red;"}
 2.  Overlay points on the boxplot with some transparency [(1 point)]{style="color: red;"}
-    1.  Add some noise to the points using `position_jitter()`, [(1 point)]{style="color: red;"}
+    1.  Add some noise to the points using `position_jitter()`, [(2 points)]{style="color: red;"}
 3.  Add proper axis labels [(1 point)]{style="color: red;"}
 4.  Add text using `geom_text()` based on the number of counts [(1 point)]{style="color: red;"}
 5.  modifying title position in `theme()` [(1 point)]{style="color: red;"}
@@ -344,11 +379,11 @@ Hints :
 
 ```
 
-### 5b.bonus. Rearrange data order [(+1 point)]{style="color: red;"}
+### 5c.bonus. Rearrange data order [(+1 point)]{style="color: red;"}
 
 Re-arrange the data in a nice order to make the plot more pleasing. *You will have to use* `arrange()` and `fct_inorder()` functions
 
-### 5c.bonus : format title text [(+1 point)]{style="color: red;"}
+### 5d.bonus. format title text [(+1 point)]{style="color: red;"}
 
 Make the words in the title text referring to the x and y axis to be distinguished (bold/italics/other colours). Can use a markdown formatter as in [ggtext](https://wilkelab.org/ggtext/articles/theme_elements.html)
 
@@ -414,13 +449,13 @@ Answer here!
 
 For the questions, I would like to acknowledge these sources of inspiration
 
--   R errors from [statsandr.com](https://statsandr.com/blog/top-10-errors-in-r/#unmatched-parentheses-curly-braces-square-brackets-or-quotes)
-
 -   Annie for many questions
 
--   Sam for quality control
+-   Sam for quality control and Q4 idea
 
--   Nice list of [css colours](https://duckduckgo.com/?t=ffab&q=css+colours&ia=answer&iax=answer) to format a `.class` of text in a particular colour to distinguish it from questions
+-   R errors from [statsandr.com](https://statsandr.com/blog/top-10-errors-in-r/#unmatched-parentheses-curly-braces-square-brackets-or-quotes)
+
+-   Nice list of [css colours](https://duckduckgo.com/?t=ffab&q=css+colours&ia=answer&iax=answer) to format a `.class` of text in a particular colour to distinguish it from questions (*if you are curious, you can change the colour of all your answers from firebrick to something else by doing* `find-and-replace` in the `Source` mode! **+1 bonus point** for this)
 
 For the solutions
 
