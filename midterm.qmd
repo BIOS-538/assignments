@@ -1,9 +1,9 @@
 ---
 title: "Midterm exam"
-format: html
-editor: 
-  visual:
-    embed-resource: true # +1 bonus point for explaining why we have this right here!
+format: 
+  html:
+    embed-resources: true # +1 bonus point for explaining why we have this
+editor: visual
 ---
 
 # Midterm
@@ -14,7 +14,11 @@ Space for TA/grader comments here!
 (Note to TAs: copy this in the middle of the code for more elaborate comments)
 :::
 
-**Change log**: 2/Mar/24, 1 pm. Updated points to 60 total (previously 55) adding questions 1e2, 1f, 4.d
+**Change log**:
+
+-   2/Mar/24: 1 pm. Updated points to 60 total (previously 55) adding questions 1e2, 1f, 4.d
+
+-   2/Mar/24: 6:30 pm. Fixed rendering to generate a standalone html file
 
 ## Prologue
 
