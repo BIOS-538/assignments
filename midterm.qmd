@@ -18,7 +18,7 @@ Space for TA/grader comments here!
 
 -   2/Mar/24: 1 pm. Updated points to 60 total (previously 55) adding questions 1e2, 1f, 4.d
 
--   2/Mar/24: 6:30 pm. Fixed rendering to generate a standalone html file
+-   2/Mar/24: 7 pm. Fixed rendering to generate a standalone html file, clarified format
 
 ## Prologue
 
@@ -33,6 +33,28 @@ Emphasis will be on the later half that uses the more efficient vectorized funct
 -   Vectorization is better than for loops : a) in a normal function b) within a dplyr chain
 
 -   Making informative plots with proper axis labels, titles, orientation and annotations is handy to communicate more effectively.
+
+## Format : submit **both `.qmd` script + `.html` output**
+
+-   Make sure to **change the filename** to include your **first name** as a suffix, such as **`midterm_prashant.qmd`**
+
+-   Please type out your **code within R chunks** in this `.qmd` (quarto markdown) file
+
+    -   along with **documentation above or next to the line of code** to **concisely** explain the purpose of the line**.**
+
+-   ::: {.class style="color: firebrick;"}
+    Add overall comments/text to explain your solution *where relevant,* such as steps taken to attempt the answer etc. especially when you didn't get the intended result.
+
+    *You can copy the first 2 words from any comment and paste it to make a box of this reddish text so TAs can see your answers quickly between the question text.*
+    :::
+
+-   **Please make sure to run and test the `R` chunks in RStudio before submission.** Ensure that the file renders into a `.html` of \>= 1MB file.
+
+-   `Render` the document into the `.html` format and submit this along with the `.qmd` file on Canvas
+
+    -   If you are unable to render due to errors in the code, you can add the option `#| eval: false` as the first line below the `{r ..}` in the chunk giving the error (*see Q4 chunks for example*) to prevent it from being run while rendering (*this way the TAs can still see your partially working code for evaluation)*. Or you can change your R code into comments (but this will be harder to read)
+
+-   Cite your sources by pasting links below the answers to each question. Acknowledge collaborators in the credits at the beginning and attribute any general sources of inspiration at the end.
 
 ## Resources
 
@@ -297,6 +319,7 @@ The following three code chunks do not work. In simple language tell us
 -   and then fix the error to make code chunk work
 
 ```{r troubleshoot-1}
+#| eval: false
 
 # First write what you think this code is supposed to do
 x <- 7 
@@ -312,6 +335,8 @@ Answer here!
 :::
 
 ```{r troubleshoot-2}
+#| eval: false
+
 rnorm(n = 3, var = 1)
 ```
 
@@ -320,6 +345,8 @@ Answer here!
 :::
 
 ```{r troubleshoot-3}
+#| eval: false
+
 gender <- factor(c("female", "female", "male", "female", "male"))
 
 Mean(gender)
