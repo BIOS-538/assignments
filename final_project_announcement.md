@@ -32,14 +32,14 @@ You can change groups or reorganize as you wish, all we need is that you make th
 
 ## Grading rubric
 Here's how the projects shall be **graded**. Each point here corresponds to 1% of the final grade.
-- 10 points for the in-class presentation (can make any format: _google slides, ppt, use quarto only if you are adventurous!_)
+- 10 points for the **in-class presentation** (_use any format: google slides, ppt, use quarto only if you are adventurous!_)
 	- Interesting question: 2 points
 	- Good choice of methods: 2 points
 	- Good visuals: 2 points
 	- Clarity of presentation: 2 points
  	- Answering questions: 2 points 
 
-- 10 points for written report (in quarto: submit the rendered `.html` file which is what we will grade + also include the `.qmd`)
+- 10 points for **written report** (_in quarto: submit the rendered `.html` file which is what we will grade + also include the `.qmd`_)
 	- Through with all necessary details: 2 points
 	- visual clarity and layout of information: 2 points
 	- Statistical support to arguments: 4 points
