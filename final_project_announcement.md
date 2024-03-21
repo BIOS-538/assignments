@@ -47,7 +47,7 @@ Here's how the projects shall be **graded**. Each point here corresponds to 1% o
 - +2 bonus points for audience choice of best presentation! (_voting on Ed discussion!_)
 
 Note that _the maximum points will be capped at 20 including bonuses_
-The grade here will apply alike to all the team members. Please do indicate contributions at the end of the written report. In extreme cases if someone on the team hasn't contributed resonably you can email the instructor for redressal.
+The grade here will apply alike to all the team members. Please do indicate contributions at the end of the written report. In extreme cases if someone on the team hasn't contributed to a reasonable extent, you can email the instructor for redressal.
 
 -----
 
