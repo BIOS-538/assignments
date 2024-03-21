@@ -26,6 +26,10 @@ Note that the answer to your questions should **involve some data-wrangling, plo
 
 You can come ask for **ideas/feedback during office hours** too!
 
+## Groups vs individual?
+If you want to work with your own data and your team isn't too keen on this, you can always do the project individually. Just make this clear to your group and submit the proposal individually from the group's proposal.
+You can change groups or reorganize as you wish, all we need is that you make the group on canvas when submitting the proposal and we will assume that's the group doing the final project together!
+
 ## Grading rubric
 Here's how the projects shall be **graded**. Each point here corresponds to 1% of the final grade.
 - 10 points for the in-class presentation
@@ -43,7 +47,7 @@ Here's how the projects shall be **graded**. Each point here corresponds to 1% o
 - +2 bonus points for audience choice of best presentation! (_voting on Ed discussion!_)
 
 The grade here will apply alike to all the team members. Please do indicate contributions at the end of the written report, and in extreme cases if anyone hasn't been contributing you can email the instructor.
-  
+
 -----
 
 ## Project/data ideas
