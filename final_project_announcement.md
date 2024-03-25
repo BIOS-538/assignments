@@ -10,15 +10,15 @@ This is an opportunity for you to use all the R and plotting skills you learnt s
 - Take the next 1 week to meet with your groups and brainstorm ideas
 - You will submit one paragraph to explain what questions you will answer and what dataset you have chosen for this ()
 - You will have 2 weeks to work on your final projects : 1st Apr to 15th April
-- Presentations will happen on the last week of classes. 16th - 19th April ; + 1 session outside of class hours
-- Final reports are due on x? (*last day of exams?*)
+- Presentations will happen on the last week of classes. 16th - 19th April ; + 1/2 sessions outside of class hours
+- Final reports are due on 26th April (*middle of exams period*)
 
 ## Proposal format
 For the proposal, you can discusss with your team and chose either of these two options for datasets. It would be ideal to propose one main idea + 1/2 more half-baked/sub-ideas that you discussed _just in case one of them looks promising!
 Note that the answer to your questions should **involve some data-wrangling, plotting, and statistical testing** (t-tests/correlation/regressions etc.)
 - **Scientific data** / bringing your own data (self-generated / from other lab members / scientific data from any published paper of interest / journalistic data of scientific rigour/interest)
-	- Propose **2 questions** to answer.
- 	- If you are unsure of what scientific data means, just try your luck by proposing multiple ideas / drop all 3 of us an email/canvas message! (_it is subjective.._)  	
+	- Propose **2 questions** to answer. _For example, you could extend or improve the statistics used in a paper.._
+ 	- If you are unsure of what scientific data means, just try your luck by proposing multiple ideas / drop all 3 of us an email/canvas message! (_it is subjective.._)
  - **Other data** sources (_more like hobby analysis/ sports data /data from Tidytuesday etc._)
  	- Propose **3 questions**! 
  - Do post on the [discussion board](https://edstem.org/us/courses/51883/discussion/) if you had extra ideas that you are willing to _lend_ to other teams! **+1 bonus point** if any team uses your extra ideas 😄
@@ -28,7 +28,7 @@ You can come ask for **ideas/feedback during office hours** too!
 
 ## Groups vs individual?
 If you want to work with your own data and your team isn't too keen on this, you can always do the project individually. Just make this clear to your group and submit the proposal individually from the group's proposal.
-You can change groups or reorganize as you wish, all we need is that you make the group on canvas when submitting the proposal and we will assume that's the group doing the final project together!
+You can change groups or reorganize as you wish, all we need is that you make the group on [canvas]([url](https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-manually-create-groups-in-a-group-set/ta-p/700)) when submitting the proposal and we will assume that's the group doing the final project together!
 
 ## Grading rubric
 Here's how the projects shall be **graded**. Each point here corresponds to 1% of the final grade.
