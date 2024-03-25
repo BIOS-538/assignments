@@ -388,7 +388,7 @@ Contrast the output of the initial barplot with the desired final plot and make 
 
 *Hints:* [barbarplots](https://thenode.biologists.com/barbarplots/photo/); [horizontal bars](https://www.storytellingwithdata.com/blog/2012/10/my-penchant-for-horizontal-bar-graphs); William Chases' glamour of graphics [talk](https://www.youtube.com/watch?v=h5cTacaWE6I),
 
-![](https://imgur.com/MT92oYy)
+![](https://i.imgur.com/MT92oYy.png)
 
 ![](../../outputs/sleep_barplot.png)
 
