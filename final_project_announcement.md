@@ -1,25 +1,31 @@
 # Format for final presentation and report
 
-The presentation and report are oportunities for you to demonstrate what you have done for the final project. The format as such is not very formal but here are some guidelines that you can use as a starting point
+The presentation and report are oportunities for you to demonstrate what you have done for the final project. The format as such is not very formal but here are some guidelines that you can use as a starting point. 
+
+- Should we include code? *Not unless it adds some value in the presentation or report. It is very unlikely you can walk through your code in your presentation..*
+- How many plots should we generate? *No set number here, if your question is answered by a plot you would show it in the presentation. If you made more plots along the way to answer your question or to decide what statistical methods to use, you would include these intermediate plots/results in your written report*
+- Can the presentation and report be different? *Yes, think of the presentation as a much more concise version of the report*
 
 ## Presentation
 *As a reminder, presentations will happen in the last week of classes (16th, and 18th April)*
-Please sign up with your group members and what date you would like to present. 
+Please sign up with your group members and what date you would like to present [in this googlesheet](https://docs.google.com/spreadsheets/d/1rcntCkf8IrnFF9K223Wnrebo3lPDZTDvUI6nWv2vnGY/edit#gid=1673004311) by Friday, 12th April. 
 
 ### Before presentation
-- Please upload your presentation (any format such as .ppt, PDF) onto Canvas by noon on the day you will present 
+- Please upload your presentation (any format such as .ppt, PDF) onto [this box.com folder](https://rice.app.box.com/f/494cefad6e0747be90545d9704913b98) by noon on the day you will present. 
 
 ### Presentation format
 Aim for a 6 to 8 minute presentation + 2 minutes of questions. *If you have more complex project and would like more time, please email us!*
 - (1 m /intro) Make sure to explain what your data is about (+ how many rows x columns you have)
 - (2 m /questions) Explain the questions you were trying to answer and why they are interesting
-- (1 m /methods) Walk people through how you answered them (methods, if applicable)
+- (2 m /methods) Walk people through how you answered them (methods, if applicable)
 - (2 m /results) What you found from your analysis
+
+You don't need to include code in your slides and focus more on the story and results (*unless they add some value*)
 
 After all the presentations, you will all vote for your favorite presentations on the Ed discussion (ranked choice of 3!). Most voted group gets +2 bonus points
 
 ## Written report
-You can follow the format of a research paper
+You can follow the format of a research paper for the report. You have to use .qmd format to generate the report.
 - (Abstract) Summarize your whole report
 - (Intro) Explain your dataset and choice of questions. Highlight any parallel research papers using similar data etc. you used for inspiration here for context
 - (Methods) How you went about answering these questions. You can use your best judgement here, but focus more details on the statistical part rather than the data wrangling part.
@@ -28,6 +34,10 @@ You can follow the format of a research paper
 - (Results) Include plots and statistical outputs in tables or any format of your choosing including as outputs of R chunks
 	- Plots should be well annotated with clear labels and a text legend summarizing the figure so that the figure is self standing for the most part.
  	- Make sure that the statistical output includes what is being tested for (in plain english rather than statspeak) 
+
+You don't need to show the code in the report unless it adds some particular value for a certain chunk (using `echo: true` for particular chunks). We will go into your `.qmd` source code if necessary to look at the code.
+
+*You will upload both the final report - `.html` (use if you have interactive plots) or `.pdf` along with the source code `.qmd`*. 
 
 ----
 # Here's the announcement with the format for the final projects!
