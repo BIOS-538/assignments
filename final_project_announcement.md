@@ -14,7 +14,8 @@ Please sign up with your group members and what date you would like to present [
 - Please upload your presentation (any format such as .ppt, PDF) onto [this box.com folder](https://rice.app.box.com/f/494cefad6e0747be90545d9704913b98) by noon on the day you will present. 
 
 ### Presentation format
-Aim for a 6 to 8 minute presentation + 2 minutes of questions. *If you have more complex project and would like more time, please email us!*
+Aim for a 6 to 8 minute presentation + 2 minutes of questions. *If you have more complex project and would like more time, please email us! Or you can take upto 10 mins to present since we have 10 mins spare time after 6 groups present if transitions are smooth*
+
 - (1 m /intro) Make sure to explain what your data is about (+ how many rows x columns you have)
 - (2 m /questions) Explain the questions you were trying to answer and why they are interesting
 - (2 m /methods) Walk people through how you answered them (methods, if applicable)
