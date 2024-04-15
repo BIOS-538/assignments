@@ -54,7 +54,7 @@ This is an opportunity for you to use all the R and plotting skills you learnt s
 - You will submit one paragraph to explain what questions you will answer and what dataset you have chosen for this ()
 - You will have 2 weeks to work on your final projects : 1st Apr to 15th April
 - Presentations will happen on the last week of classes. 16th - 19th April ; + 1/2 sessions outside of class hours
-- Final reports are due on 26th April (*middle of exams period*)
+- Final reports are due on **29th April** (*~ end of the exams for undergrads*)
 
 ## Proposal format
 For the proposal, you can discusss with your team and chose either of these two options for datasets. It would be ideal to propose one main idea + 1/2 more half-baked/sub-ideas that you discussed _just in case one of them looks promising!
