@@ -16,7 +16,7 @@ editor: visual
 
 |       | 0   | Q1  | Q2  | Q3  | Q4  | sum           |
 |-------|-----|-----|-----|-----|-----|---------------|
-| Reg   | \-  | 11  | 14  | 11  | 11  | 35 (*not 47*) |
+| Reg   | \-  | 11  | 14  | 11  | 11  | 36 (*not 47*) |
 | Bonus | \-  | 2   | 2   | 1   | \-  | 5             |
 
 ## **Important message:**
@@ -50,7 +50,7 @@ load the `Tumor` dataset on your own by following these instructions
 
 ### 1.a. write 1-3 sentences describing the data (1 point)
 
-Here's where the data came from ([kaggle datasets](https://www.kaggle.com/datasets/jakeshbohaju/brain-tumor/data)) for context. *You may need to search the internet for some of the terms in order to explain them*
+Here's where the data came from ([kaggle datasets](https://www.kaggle.com/datasets/jakeshbohaju/brain-tumor/data)) for context. *You may need to search the internet for some of the terms in order to explain them.*
 
 url: <https://www.kaggle.com/datasets/jakeshbohaju/brain-tumor/data>
 
@@ -140,6 +140,8 @@ We will do a short exercise to demonstrate your understanding of t-tests, and sp
 You treated 10 patients with a medicine, 10 more with a placebo and measure their health score (0 to 1). What hypothesis test (*give full detailed name of the test*) would you do to show that the medicine group has a **higher** health score compared to the placebo group. (1 point)
 
 -   State in mathematical terms, what is the alternate hypothesis? (*hint: mentioned above in english)*
+
+    -   Example: *H*~0~: *μ*~1~ = *μ*~2\ from\ wikipedia/[null\ hypothesis](https://en.wikipedia.org/wiki/Null_hypothesis#Basic_definitions)/basic\ definitions~
 
 -   State in English and mathematical form, what is the **null hypothesis**?
 
@@ -328,11 +330,15 @@ Answer here
 
 ### 4.a. Loading data (1 point)
 
-load the `housing_Final_Exam` dataset on your own similar to the Tumor data
+load the `housing_Final_Exam` dataset on your own, similar to the tumor data
 
 -   Put the file in a separate data/ folder in your Rproject folder
 
 -   Load the `.csv` file using `relative path` starting from the folder this `.qmd` file is in
+
+Here's where the data came from ([kaggle datasets](https://www.kaggle.com/datasets/iamsouravbanerjee/house-rent-prediction-dataset)) for context. *You may need to search the internet to understand some of the terms.*
+
+url: <https://www.kaggle.com/datasets/iamsouravbanerjee/house-rent-prediction-dataset>
 
 ```{r load-housing-data}
 
